@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/29ee0bc57e.js" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <header>
+      <h1>To Do List</h1>
+      <div class="inputfield">
+      <input type="text" id="myInput" placeholder="Les choses à faire..." />
+      <input id="addBtn" type="button" name="add" value="Ajouter" onClick="addTodo()"/>
+    </div>
+      <div id="Message"></div>
+    </header>
+    <main>
+      <div class="headings">
+        <h2>Liste de tâches</h2>
+        <h2>Actions</h2>
+      </div>
+      <ul id="myUL"></ul>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
