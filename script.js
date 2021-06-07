@@ -58,56 +58,23 @@ const editItem = (idvalue) => {
       todoList[objectIndex].todoText = modifyText;                    /*replace text in object with new text entered*/
       document.getElementById("addBtn").disabled = false;           /*enable 'ajouter' button after modification*/
       Store(); 
+      console.log('after modify', todoList);
       displayTodos();
     }
 }
-
-function deleteitem() {
- alert('hello');
 
 //FUNCTION: DISPLAYING THE ENTERED ITEMS ON THE SCREEN
 const displayTodos = () => {
 
  document.querySelector("#myInput").value = "";
- let todohtml= "";
+ let todohtml = "";
  /*for each object in the array*/
   todoList.forEach((item) => {
   todohtml += `
 <li>${item.todoText}
-<i class="far fa-trash-alt" data-id="${item.id}" onclick="deleteitem()"></i>
-<i class="fas fa-edit" data-id="${item.id}"></i></li>`
-
-/*    const listElement = document.createElement("li"); /*create a list element
-    const delBtn = document.createElement("i");       /*with two icon elements
-    const editBtn = document.createElement("i");
-
-    listElement.innerHTML = item.todoText;        add the 'todoText' of the object to the list element
-    listElement.setAttribute("data-id", item.id);   
-    add an ID (using todoObject ID) to the list element
-
-    delBtn.classList.add("far", "fa-trash-alt"); /*assign class so 1st icon styled/awesomefont
-    delBtn.setAttribute("data-id", item.id);          /*add same ID as the list element
-
-    editBtn.classList.add("fas", "fa-edit");    /*assign class so 2nd icon styled/awesomefont
-    editBtn.setAttribute("data-id", item.id);        /*add same ID as the list element*/
-
-    /* ADD A LISTENER TO THE DELETE ICON
-    delBtn.addEventListener("click", (event) => {
-      const delId = event.target.getAttribute("data-id");
-      deleteItem(delId);
-    });
-
-    /* ADD A LISTENER TO THE MODIFY ICON
-    editBtn.addEventListener("click", (event) => {
-      const editId = event.target.getAttribute("data-id"); 
-      editItem(editId);
-    });
-
-    /* ADD TO THE DOM
-    todoListElement.appendChild(listElement);
-      listElement.appendChild(delBtn);
-      listElement.appendChild(editBtn);*/
-    });
+<i class="far fa-trash-alt" data-id="${item.id}" onclick="deleteItem(${item.id})"></i>
+<i class="fas fa-edit" data-id="${item.id}" onclick="editItem(${item.id})"></i></li>`
+});
     todoListElement.innerHTML = todohtml;      
     userInput.focus(); /*place cursor in input field ready for user input*/
 }
