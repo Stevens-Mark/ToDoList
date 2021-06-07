@@ -72,8 +72,8 @@ const displayTodos = () => {
   todoList.forEach((item) => {
   todohtml += `
 <li>${item.todoText}
-<i class="far fa-trash-alt" data-id="${item.id}" onclick="deleteItem(${item.id})"></i>
-<i class="fas fa-edit" data-id="${item.id}" onclick="editItem(${item.id})"></i></li>`
+<i class="far fa-trash-alt" onclick="deleteItem(${item.id})"></i>
+<i class="fas fa-edit"  onclick="editItem(${item.id})"></i></li>`
 });
     todoListElement.innerHTML = todohtml;      
     userInput.focus(); /*place cursor in input field ready for user input*/
